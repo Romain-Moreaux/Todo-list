@@ -1,13 +1,121 @@
+:root {
+  --brown: #992e24;
+  --red: #d04925;
+  --grey: #696464;
+  --white: #e9e5dd;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
+html {
+  font-size: 62.5%; /*for using REM units*/
+  height: 100%;
+}
 body {
+  height: 100%;
+  font-size: 1.6rem;
+  color: var(--grey);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  line-height: 1.4;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--white);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root,
+.App {
+  height: inherit;
+}
+
+.App {
+  padding: 0 16rem;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4.5rem;
+  letter-spacing: 0.124rem;
+  color: var(--brown);
+}
+h2 {
+  font-size: 3.2rem;
+  letter-spacing: 0.085rem;
+}
+
+.list {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: 1px solid var(--white);
+  border-radius: 7px;
+  background-color: #f2f2f2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  font-size: 2rem;
+}
+.task .is-done {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.task .close {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 1rem;
+  background-image: url(./close.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.input,
+.submit {
+  height: 40px;
+}
+.input {
+  border: 1px solid var(--red);
+  padding: 0 1.6rem;
+}
+::placeholder {
+  font-style: italic;
+}
+
+.submit {
+  background-color: var(--red);
+  padding: 0 2rem;
+  color: var(--white);
+  font-size: 300;
+  text-transform: uppercase;
 }
